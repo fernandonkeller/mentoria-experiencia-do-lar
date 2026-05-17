@@ -4,6 +4,8 @@ import { persistEnrollment } from "@/lib/integrations";
 import { sanitizeDigits, sanitizeEmail, sanitizeText } from "@/lib/sanitizers";
 import { enrollmentSchema } from "@/schemas/enrollment-schema";
 
+export const runtime = "edge";
+
 export async function POST(request: Request) {
   const body = await request.json();
 
