@@ -1,0 +1,3 @@
+name = "mentoria-experiencia-do-lar"
+compatibility_date = "2026-05-17"
+compatibility_flags = ["nodejs_compat"]
