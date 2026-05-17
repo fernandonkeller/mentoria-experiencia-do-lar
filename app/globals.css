@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "../styles/utilities.css";
+
+:root {
+  /* Troque as fontes aqui se quiser usar arquivos locais/licenciados. */
+  --font-sans: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-serif:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "URW Palladio L",
+    "Book Antiqua",
+    serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(214, 178, 160, 0.2), transparent 28%),
+    radial-gradient(circle at top right, rgba(173, 104, 132, 0.14), transparent 22%),
+    var(--color-ivory);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: rgba(173, 104, 132, 0.24);
+  color: var(--color-ink);
+}
