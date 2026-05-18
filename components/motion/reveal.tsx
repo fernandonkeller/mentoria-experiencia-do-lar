@@ -14,7 +14,7 @@ export function Reveal({
   delay?: number;
 }) {
   const shouldReduceMotion = useReducedMotion();
-  const [disableScrollReveal, setDisableScrollReveal] = useState(false);
+  const [disableScrollReveal, setDisableScrollReveal] = useState(true);
 
   useEffect(() => {
     if (typeof window === "undefined") {
