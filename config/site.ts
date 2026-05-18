@@ -31,7 +31,7 @@ export const siteConfig = {
       "Uma experiência presencial, íntima e premium para mulheres que desejam viver princípios bíblicos com aplicações práticas no cotidiano do seu lar.",
     primaryCta: "Quero me inscrever",
     secondaryCta: "Ver detalhes da experiência",
-    image: "/images/mentoria/sabrina-family.jpeg", // Troque a imagem principal aqui.
+    image: "/images/mentoria/pdf-page-01.jpg", // Troque a imagem principal aqui.
   },
   metrics: [
     { value: "+ 150", label: "mulheres e lares impactados" },
