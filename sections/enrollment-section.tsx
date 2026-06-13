@@ -1,5 +1,5 @@
-import { Reveal } from "@/components/motion/reveal";
 import { EnrollmentForm } from "@/components/forms/enrollment-form";
+import { Reveal } from "@/components/motion/reveal";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -10,7 +10,7 @@ export function EnrollmentSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Formulário de inscrição"
-            title="Preencha seus dados para garantir sua inscrição com segurança."
+            title="Preencha seus dados para garantir sua pré-inscrição."
           />
         </Reveal>
 
