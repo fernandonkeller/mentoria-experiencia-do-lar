@@ -17,8 +17,8 @@ export default async function HomePage() {
       <BenefitsSection />
       <ModulesSection />
       <AuthoritySection />
-      <EnrollmentSection />
       <PaymentSection />
+      <EnrollmentSection />
       <TestimonialsSection />
       <FaqSection />
       <FooterSection />

@@ -68,8 +68,8 @@ export const siteConfig = {
     photo: "/images/mentoria/sabrina-authority.png", // Troque a foto da autoridade aqui.
   },
   payment: {
-    upfront: "R$ 1.597,00 à vista",
-    installments: "3x de R$ 597,00",
+    upfront: "R$ 1.697,00 à vista",
+    installments: "3x de R$ 623,00",
     pixKey: "eu@sabrinakeller.com.br",
     note: "Após o pagamento, a inscrição é confirmada e a participante recebe o direcionamento individual sobre a turma e o calendário.",
   },
@@ -86,13 +86,13 @@ export const benefits = [
     icon: "house",
     title: "Transformação prática do lar",
     description:
-      "Temas como etiqueta, mesa posta, limpeza da casa, decoração, culinária e hospitalidade.",
+      "Temas como etiqueta, princípio da mesa, limpeza da casa, decoração, culinária e hospitalidade.",
   },
   {
     icon: "cup-soda",
     title: "Experiência presencial premium",
     description:
-      "Em todos os encontros teremos um tempo de mesa especial com delícias para desfrutar, tudo preparado para acolher com beleza e intencionalidade cada mulher.",
+      "Em todos os encontros teremos um tempo de mesa especial com delícias para desfrutar, tudo preparado com beleza para servir, acolher, intencionalmente cada mulher.",
   },
   {
     icon: "badge-check",
@@ -110,7 +110,7 @@ export const benefits = [
     icon: "users",
     title: "Comunidade que permanece",
     description:
-      "Entrada no Clube das Guardiãs do Lar, com encontro especial após a formatura e continuidade da conexão.",
+      "Acesso ao Clube das Guardiãs do Lar, com encontros mensais presenciais após a formatura e continuidade da conexão.",
   },
 ] satisfies BenefitItem[];
 
@@ -189,17 +189,17 @@ export const faqItems = [
   {
     question: "Como funciona a inscrição?",
     answer:
-      "Você preenche o formulário, recebe a validação da inscrição e segue para o pagamento pelo checkout. Após a confirmação, Sabrina direciona individualmente a turma e o calendário.",
+      "Você preenche o formulário e, ao clicar em fazer inscrição, seus dados seguem para o WhatsApp da Sabrina. Depois da confirmação do pagamento, a turma e o calendário são alinhados individualmente.",
   },
   {
     question: "O pagamento é seguro?",
     answer:
-      "Sim. Todos os CTAs levam para um checkout preparado para integração com provedores como Stripe, Mercado Pago, Hotmart, Kirvano e Perfect Pay.",
+      "Sim. O pagamento pode ser realizado por Pix ou por link de cartão enviado pela Sabrina, de forma segura e orientada.",
   },
   {
     question: "Recebo confirmação?",
     answer:
-      "Sim. Depois do envio do cadastro e da conclusão do pagamento, a confirmação é apresentada e o contato da participante segue para o fluxo de suporte.",
+      "Sim. Após o envio da sua pré-inscrição e a confirmação do pagamento, você recebe o direcionamento com os próximos passos.",
   },
   {
     question: "Posso tirar dúvidas?",

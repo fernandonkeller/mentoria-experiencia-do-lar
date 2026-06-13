@@ -20,9 +20,9 @@ export function FooterSection() {
                 {siteConfig.name}
               </h2>
               <p className="max-w-2xl text-sm leading-7 text-muted">
-                Landing page premium criada para apresentação, inscrição e
-                pagamento da mentoria. Ajuste textos, imagens, checkout e
-                integrações de backend nos arquivos indicados pelos comentários.
+                Uma experiência criada para apresentar a mentoria, orientar a
+                pré-inscrição e facilitar o contato direto para confirmação da
+                vaga.
               </p>
               <div className="flex flex-wrap gap-3">
                 <ButtonLink href={siteConfig.contact.instagram} variant="secondary">

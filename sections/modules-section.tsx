@@ -10,7 +10,7 @@ const moduleHighlights = [
   {
     icon: Clock3,
     title: "8 encontros presenciais",
-    description: "Uma vez por semana, com 2h30 de duração em ambiente preparado com amor.",
+    description: "No meu lar, uma vez por semana, na parte da tarde das 14h as 16h30, um ambiente preparado com amor.",
   },
   {
     icon: Gift,

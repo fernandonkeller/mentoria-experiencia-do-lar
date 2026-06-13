@@ -5,14 +5,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderCircle, LockKeyhole, MoveRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 
+import { FormField } from "@/components/forms/form-field";
+import { Button } from "@/components/ui/button";
+import { Input, Select, Textarea } from "@/components/ui/input";
+import { siteConfig } from "@/config/site";
 import { useInputMask } from "@/hooks/use-input-mask";
-import { cn, getCheckoutHref } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { enrollmentSchema } from "@/schemas/enrollment-schema";
 import type { EnrollmentFormValues } from "@/types/enrollment";
 import { maskCpf, maskDate, maskWhatsapp } from "@/validations/masks";
-import { Button } from "@/components/ui/button";
-import { Input, Select, Textarea } from "@/components/ui/input";
-import { FormField } from "@/components/forms/form-field";
 
 const defaultValues: EnrollmentFormValues = {
   fullName: "",
@@ -52,45 +53,39 @@ export function EnrollmentForm() {
   const onSubmit = handleSubmit(async (values) => {
     setFormMessage({ type: "idle", text: "" });
 
-    const response = await fetch("/api/enroll", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-
-    const payload = (await response.json()) as {
-      message?: string;
-      errors?: Record<string, string[]>;
-    };
-
-    if (!response.ok) {
+    if ((values.honeypot ?? "").trim().length > 0) {
       setFormMessage({
         type: "error",
-        text: payload.message ?? "Não foi possível enviar sua inscrição.",
+        text: "Não foi possível enviar sua inscrição.",
       });
       return;
     }
 
+    const whatsappMessage = [
+      "Olá, Sabrina. Seguem meus dados para pré-inscrição na Mentoria Experiência do Lar:",
+      "",
+      `Nome completo: ${values.fullName}`,
+      `Data de nascimento: ${values.birthDate}`,
+      `WhatsApp: ${values.whatsapp}`,
+      `E-mail: ${values.email}`,
+      `Instagram: ${values.instagram}`,
+      `CPF: ${values.cpf}`,
+      `Endereço completo: ${values.address}`,
+      `Estado civil: ${values.maritalStatus}`,
+      `Quantidade de filhos: ${values.childrenCount}`,
+      `Formação profissional: ${values.professionalBackground}`,
+    ].join("\n");
+
+    const whatsappHref = `${siteConfig.contact.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+
     setFormMessage({
       type: "success",
-      text: "Cadastro recebido com sucesso. Vamos te levar para o pagamento.",
+      text: "Tudo certo. Vamos abrir o WhatsApp para enviar sua pré-inscrição.",
     });
 
     startTransition(() => {
       window.setTimeout(() => {
-        const checkoutHref = getCheckoutHref();
-
-        if (checkoutHref === "#pagamento") {
-          document.getElementById("pagamento")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-          return;
-        }
-
-        window.location.href = checkoutHref;
+        window.location.href = whatsappHref;
       }, 1100);
     });
   });
@@ -214,7 +209,7 @@ export function EnrollmentForm() {
           {...register("consent")}
         />
         <span className="text-sm leading-6 text-muted">
-          Autorizo o uso dos meus dados para contato e inscrição.
+          Autorizo o uso dos meus dados para contato e pré-inscrição.
         </span>
       </label>
       {errors.consent?.message ? (
@@ -237,7 +232,7 @@ export function EnrollmentForm() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2 text-sm text-muted">
           <LockKeyhole className="h-4 w-4 text-[var(--color-rose-deep)]" />
-          Seus dados serão usados apenas para inscrição e contato.
+          Seus dados serão usados apenas para contato e pré-inscrição.
         </div>
 
         <Button className="min-w-[220px]" disabled={pending} type="submit">
@@ -254,7 +249,6 @@ export function EnrollmentForm() {
           )}
         </Button>
       </div>
-
     </form>
   );
 }
