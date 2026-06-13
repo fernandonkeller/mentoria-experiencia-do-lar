@@ -150,13 +150,13 @@ export const modules = [
   },
   {
     step: "Módulo 4",
-    title: "Imersão, formatura e continuidade",
+    title: "Imersão e formatura",
     description:
-      "Conclusão da jornada com almoço especial, certificação, memória registrada e entrada na comunidade exclusiva.",
+      "Conclusão da jornada com almoço especial, certificação, memória registrada e um ingresso para encontro na comunidade exclusiva das Guardiãs do Lar.",
     bullets: [
       "Encontro final com almoço e cerimônia de formatura",
       "Registro profissional de fotos e memórias",
-      "Ingresso no Clube das Guardiãs do Lar",
+      "Ingresso para o próximo encontro do clube das Guardiãs do Lar",
     ],
   },
 ] satisfies ModuleItem[];
